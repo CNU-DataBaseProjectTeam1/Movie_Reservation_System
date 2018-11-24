@@ -21,7 +21,7 @@
 	try {
 		String jdbcUrl = "jdbc:mysql://localhost:3306/movie_reservation";
 		String dbId = "root";
-		String dbPass = "qotkddnd1";
+		String dbPass = "1234";
 		
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
@@ -59,10 +59,11 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>Movie Insert Result</title>
 </head>
 <body>
+	<h1>Movie Insert Result</h1>
 	<%=str %>
-	<a href="admin_movie_page.jsp">되돌아가기</a>
+	<a href="admin_movie_page.jsp">돌아가기</a>
 </body>
 </html>

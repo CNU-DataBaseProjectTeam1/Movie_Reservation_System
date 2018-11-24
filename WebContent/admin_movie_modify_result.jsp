@@ -17,12 +17,12 @@
 	try {
 		String jdbcUrl = "jdbc:mysql://localhost:3306/movie_reservation";
 		String dbId = "root";
-		String dbPass = "qotkddnd1";
+		String dbPass = "1234";
 		
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);   
 		
-		String sql = "update movie set title = ?, director = ?, info = ?, actors = ? where Movie_Number=?";
+		String sql = "update movie set title=?, director=?, info=?, actors=? where Movie_Number=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, title);
 		pstmt.setString(2, director);
@@ -52,9 +52,11 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>Movie Modify Result</title>
 </head>
 <body>
-	<a href="#">돌아가기</a>
+	<h1>Movie Modify Result</h1>
+	<%=str %>
+	<a href="admin_movie_page.jsp">Back</a>
 </body>
 </html>
