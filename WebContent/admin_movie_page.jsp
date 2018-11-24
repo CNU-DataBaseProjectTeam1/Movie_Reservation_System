@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>Movie Manage</title>
 </head>
 <body>
-	<a href="admin_movie_insert.jsp">영화 추가</a>
-	<a href="admin_movie_insert.jsp">영화 검색</a>
-	<a href="admin_movie_insert.jsp">영화 수정</a>
+	<h1>Movie Manage</h1>
+	<a href="admin_movie_insert.jsp">Movie Insert</a><br>
+	<a href="admin_movie_list.jsp">Movie Modify</a><br>
+	<a href="admin_movie_insert.jsp">영화 검색</a><br>
 </body>
 </html>
