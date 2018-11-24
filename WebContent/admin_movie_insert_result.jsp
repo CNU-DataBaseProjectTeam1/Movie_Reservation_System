@@ -21,7 +21,7 @@
 	try {
 		String jdbcUrl = "jdbc:mysql://localhost:3306/movie_reservation";
 		String dbId = "root";
-		String dbPass = "1234";
+		String dbPass = "qotkddnd1";
 		
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
