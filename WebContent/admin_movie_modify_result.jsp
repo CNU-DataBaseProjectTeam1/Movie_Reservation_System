@@ -35,17 +35,6 @@
 	} catch (Exception e) {
 		e.printStackTrace();
 		str = "등록 실패";
-	} finally {
-		if (pstmt != null)
-			try {
-				pstmt.close();
-			} catch (SQLException sqle) {
-			}
-		if (conn != null)
-			try {
-				conn.close();
-			} catch (SQLException sqle) {
-			}
 	}
 %>
 <!DOCTYPE html>

@@ -27,16 +27,16 @@
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
 		// rating
-		String test = "select * from movie";
+		String sql = "select * from movie";
 			
-		pstmt = conn.prepareStatement(test);
+		pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
 		
 		rs.last(); // move to last recode
 		number = Integer.toString(Integer.parseInt(rs.getString("Movie_Number")) + 1); // (last recode's num) + 1   
 		
-		String sql = "insert into movie values(?, ?, ?, ?, ?, ?)";
-		pstmt = conn.prepareStatement(sql);
+		String sql2 = "insert into movie values(?, ?, ?, ?, ?, ?)";
+		pstmt = conn.prepareStatement(sql2);
 		pstmt.setString(1, number);
 		pstmt.setString(2, title);
 		pstmt.setString(3, director);
@@ -49,9 +49,6 @@
 	}catch(Exception e) {
 		e.printStackTrace();
 		str = "등록 실패";
-	}finally{
-		if (pstmt != null) try { pstmt.close(); } catch(SQLException sqle) {}
-		if (conn != null) try { conn.close(); } catch(SQLException sqle) {}
 	}
 %>
 
