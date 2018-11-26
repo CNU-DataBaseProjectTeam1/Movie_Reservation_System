@@ -105,11 +105,3 @@ Create Table Ticket(
 );
 
 set sql_safe_updates=0;
-
-delete from theater;
-
-select * from theater;
-
-select * from auditorium;
-
-insert into auditorium values(1, "3", 30);
