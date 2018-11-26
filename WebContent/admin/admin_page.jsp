@@ -8,9 +8,9 @@
 </head>
 <body>
 	<h1>Admin Page</h1>
-	<a href="admin_movie_page.jsp">Movie Management</a><br>
+	<a href="./movie/admin_movie_page.jsp">Movie Management</a><br>
 	<a href="">User Management</a><br>
-	<a href="">Theater Management</a><br><br>
+	<a href="./theater/admin_theater_page.jsp">Theater Management</a><br><br>
 	
 	<a href="">Back</a>
 </body>

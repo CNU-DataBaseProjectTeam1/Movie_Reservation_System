@@ -12,8 +12,6 @@
 	String rating = "0";
 	String number;
 	
-	Timestamp register = new Timestamp(System.currentTimeMillis());
-	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	String str = "";
@@ -26,18 +24,20 @@
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
-		// rating
 		String sql = "select * from movie";
 			
 		pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
 		
-		rs.last(); // move to last recode
-		number = Integer.toString(Integer.parseInt(rs.getString("Movie_Number")) + 1); // (last recode's num) + 1   
+		int last_number = 1;
+		
+		if (rs.last()) {
+			last_number = Integer.parseInt(rs.getString("Movie_Number")) + 1; // (last recode's num) + 1	
+		}
 		
 		String sql2 = "insert into movie values(?, ?, ?, ?, ?, ?)";
 		pstmt = conn.prepareStatement(sql2);
-		pstmt.setString(1, number);
+		pstmt.setString(1, Integer.toString(last_number));
 		pstmt.setString(2, title);
 		pstmt.setString(3, director);
 		pstmt.setString(4, rating);
@@ -45,10 +45,10 @@
 		pstmt.setString(6, actors);
 		pstmt.executeUpdate();
 		
-		str = "새로운 영화가 등록되었습니다.";
+		str = "Complete to insert the movie";
 	}catch(Exception e) {
 		e.printStackTrace();
-		str = "등록 실패";
+		str = "Fail";
 	}
 %>
 
@@ -60,7 +60,7 @@
 </head>
 <body>
 	<h1>Movie Insert Result</h1>
-	<%=str %>
-	<a href="admin_movie_page.jsp">돌아가기</a>
+	<%=str %><br>
+	<a href="admin_movie_page.jsp">Back</a>
 </body>
 </html>

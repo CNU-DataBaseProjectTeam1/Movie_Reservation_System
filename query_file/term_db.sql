@@ -1,24 +1,15 @@
-create database movie_reservation;
-use movie_reservation;
-show databases;
+CREATE DATABASE movie_reservation;
 
-show tables;
-desc Movie;
-select * from Movie;
-/* protect rs empty
-insert into Movie(Movie_Number, Title, Director, Rating, info, actors)
-Value('1', 'title', 'director', '0', 'info', 'actors');
-*/
+USE movie_reservation;
+
 CREATE TABLE Admin(
-	Admin_Number 	int,
 	ID				varchar(20),
 	Password 		varchar(20),
     
-	PRIMARY KEY(Admin_Number)
+	PRIMARY KEY(ID)
 );
 
 CREATE TABLE User(
-	User_Number 	int,
 	ID 				varchar(20),
     Password 		varchar(20),
 	Name 			varchar(20),
@@ -28,39 +19,15 @@ CREATE TABLE User(
 	Point			int,
 	VIP				char(1),
     
-	PRIMARY KEY(User_Number)
+	PRIMARY KEY(ID)
 );
 
-CREATE TABLE Reservation(
-	Reservation_Number	int,
-    User_Number			int,
-    Seat_Number			int,
-    
-    primary key(Reservation_Number),
-    foreign key(User_Number) references User(User_Number) on delete cascade on update cascade,
-    foreign key(Seat_Number) references Seat(Seat_Number) on delete cascade on update cascade 
-);
-
-Create Table Seat(
-	Seat_Number			int,
-    Schedule_Number		int,
-    RealNumber			int,
-    
-    primary key(Seat_Number),
-    foreign key(Schedule_Number) references Schedule(Schedule_Number) on delete cascade on update cascade
-);
-
-Create Table Schedule(
-	Schedule_Number		int,
-    Auditorium_Number	int,
-    Movie_Number		int,
-    StartTime			date,
-    EndTime				date,
-    
-    primary key(Schedule_Number),
-    foreign key(Auditorium_Number) references Auditorium(Auditorium_Number) on delete cascade on update cascade,
-    foreign key(Movie_Number) references Movie(Movie_Number) on delete cascade on update cascade
-    
+Create Table Theater(
+	Theater_Name		varchar(40),
+    Address				varchar(20),
+    PhoneNumber			varchar(20),
+    SeatNumber			varchar(10),
+    primary key(Theater_Name)
 );
 
 Create Table Movie(
@@ -76,7 +43,7 @@ Create Table Movie(
 
 Create Table Auditorium(
 	Auditorium_Number	int,
-    Theater_Name		int,
+    Theater_Name		varchar(40),
     SeatCount			int,
     
     primary key(Auditorium_Number),
@@ -84,12 +51,36 @@ Create Table Auditorium(
     
 );
 
-Create Table Theater(
-	Theater_Name		varchar(40),
-    Address				varchar(20),
-    PhoneNumber			varchar(20),
-    SeatNumber			varchar(10),
-    primary key(Theater_Name)
+Create Table Schedule(
+	Schedule_Number		int,
+    Auditorium_Number	int,
+    Movie_Number		int,
+    StartTime			date,
+    EndTime				date,
+    
+    primary key(Schedule_Number),
+    foreign key(Auditorium_Number) references Auditorium(Auditorium_Number) on delete cascade on update cascade,
+    foreign key(Movie_Number) references Movie(Movie_Number) on delete cascade on update cascade
+    
+);
+
+Create Table Seat(
+	Seat_Number			int,
+    Schedule_Number		int,
+    RealNumber			int,
+    
+    primary key(Seat_Number),
+    foreign key(Schedule_Number) references Schedule(Schedule_Number) on delete cascade on update cascade
+);
+
+CREATE TABLE Reservation(
+	Reservation_Number	int,
+    ID					varchar(20),
+    Seat_Number			int,
+    
+    primary key(Reservation_Number),
+    foreign key(ID) references User(ID) on delete cascade on update cascade,
+    foreign key(Seat_Number) references Seat(Seat_Number) on delete cascade on update cascade 
 );
 
 Create Table Payment(
@@ -113,6 +104,12 @@ Create Table Ticket(
     
 );
 
-    
-        
-        
+set sql_safe_updates=0;
+
+delete from theater;
+
+select * from theater;
+
+select * from auditorium;
+
+insert into auditorium values(1, "3", 30);
