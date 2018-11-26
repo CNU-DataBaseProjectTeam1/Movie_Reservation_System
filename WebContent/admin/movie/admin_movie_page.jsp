@@ -11,6 +11,6 @@
 	<a href="admin_movie_insert.jsp">Movie Insert</a><br>
 	<a href="admin_movie_list.jsp">Movie Modify</a><br>
 	<a href="admin_movie_insert.jsp">영화 검색</a><br><br>
-	<a href="admin_page.jsp">Back</a>
+	<a href="../admin_page.jsp">Back</a>
 </body>
 </html>
