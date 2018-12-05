@@ -10,7 +10,7 @@
 	String director = request.getParameter("director");
 	String info = request.getParameter("info");
 	String actors = request.getParameter("actors");
-
+	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	String str = "";
