@@ -6,8 +6,14 @@
 <% request.setCharacterEncoding("euc-kr"); %>
 
 <%
+	String next_page = "user_reservation_result.jsp";
+	String prev_page = "";
+
 	String schedule_number = "1";
 	String user_id = "abc";
+	
+	request.getSession().setAttribute("Schedule_Number", schedule_number);
+	request.getSession().setAttribute("User_Id", user_id);
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -64,7 +70,7 @@
 
 			<%
 				for (int i = 0; i < seat_count; i++) {
-					if (seat[i] == false) { %> <a href=""><%=i+1 %></a> <% }
+					if (seat[i] == false) { %> <a href="<%=next_page %>?Real_Number=<%=i+1 %>"><%=i+1 %></a> <% }
 					else { %> <a><%=i+1 %></a> <% }
 					
 					if ((i+1) % 5 == 0) { %><br><% }

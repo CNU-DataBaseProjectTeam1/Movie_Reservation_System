@@ -16,10 +16,9 @@
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
-		// rating
-		String test = "select * from movie";
+		String sql = "select * from movie";
 			
-		pstmt = conn.prepareStatement(test);
+		pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
 		
 %>
