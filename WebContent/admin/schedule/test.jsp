@@ -29,6 +29,8 @@
 		String select_theater = "select * from Auditorium";
 		pstmt = conn.prepareStatement(select_theater);
 		ResultSet theater_selection = pstmt.executeQuery();
+		
+		
 
 %>
 <!DOCTYPE html>
@@ -40,15 +42,13 @@
 <body>
 	<table>
 		<tr>
-			<td>구분</td>
-			<td>영화제목</td>
-			<td>영화관</td>
-			<td>시작시간</td>
-			<td>끝시간</td>
+			<td>Title</td>
+			<td>Theater</td>
+			<td>StartTime</td>
+			<td>EndTime</td>
 		</tr>
 		<form method="get" action="test_result.jsp">
 		<tr>
-			<td>hi</td>
 			<td><select name="Movie_number">
 					<%
 					while(movie_selection.next()){
