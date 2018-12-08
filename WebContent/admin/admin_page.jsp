@@ -10,8 +10,9 @@
 	<h1>Admin Page</h1>
 	<a href="./movie/admin_movie_page.jsp">Movie Management</a><br>
 	<a href="">User Management</a><br>
-	<a href="./theater/admin_theater_page.jsp">Theater Management</a><br><br>
+	<a href="./schedule/admin_theater_page.jsp">Theater Management</a><br>
+	<a href="./schedule/admin_schedule_page.jsp">Schedule Management</a><br><br>
 	
-	<a href="">Back</a>
+	<a href="../login.jsp">Back</a>
 </body>
 </html>
