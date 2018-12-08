@@ -13,5 +13,6 @@
 		PASSWORD : <input type="password" name="password"><br>
 		<input type="submit" value="login">
 	</form>
+	<a href="../login.jsp">Back</a>
 </body>
 </html>
