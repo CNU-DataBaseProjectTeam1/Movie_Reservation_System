@@ -3,6 +3,8 @@
 <%@ page import="java.sql.*" %>
 <% request.setCharacterEncoding("euc-kr"); %>
 <%
+	String id = (String) request.getSession().getAttribute("ID");
+	request.getSession().setAttribute("ID", id);
 
 	String str = "";
 	Connection conn = null;
