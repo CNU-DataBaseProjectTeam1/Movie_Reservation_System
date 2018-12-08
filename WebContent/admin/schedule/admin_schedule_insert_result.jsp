@@ -67,16 +67,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Insert Result</h1>
-	Schedule_number = <%=Schedule_no %> <br>
-	Auditorium_number = <%=Auditorium_number %> <br> 
-	Movie_number = <%=Movie_number %> <br>
-	Start Time <%=starttime %> <br>
-	End Time <%=endtime %> <br>
-	
-	<br>
-	<br>
-	<br>
 <!--스케쥴 전체 목록 -->
 	<h2>Schedule List</h2>
 	<table style="border : 1px solid">
