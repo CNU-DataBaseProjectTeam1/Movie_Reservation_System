@@ -43,7 +43,13 @@
 			idlist.add(rs.getString("ID"));
 		}
 		if(idlist.contains(id)){
-		str = "Fail";
+		%>
+			<script>
+				alert("already exist id");
+				history.go(-1);
+			</script>
+		<%
+			str = "Fail";
 		}
 		else{
 		String sql = "insert into user values(?, ?, ?, ?, ?, ?, ?, ?)";
