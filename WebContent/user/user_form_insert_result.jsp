@@ -67,6 +67,6 @@
 %>
 <h1>User insert Result</h1>
 	<%=str %><br>
-	<a href="login.jsp">Back</a>
+	<a href="../login.jsp">Back</a>
 </body>
 </html>

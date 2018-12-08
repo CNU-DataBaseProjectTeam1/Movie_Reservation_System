@@ -47,7 +47,7 @@
 			<td>StartTime</td>
 			<td>EndTime</td>
 		</tr>
-		<form method="get" action="test_result.jsp">
+		<form method="get" action="admin_schedule_insert_result.jsp">
 		<tr>
 			<td><select name="Movie_number">
 					<%

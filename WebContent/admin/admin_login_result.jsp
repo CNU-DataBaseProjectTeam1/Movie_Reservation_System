@@ -25,7 +25,7 @@
 		ResultSet rs = pstmt.executeQuery();
 		
 		if (rs.next() && password.equals(rs.getString("Password"))) {
-			response.sendRedirect("admin_movie_page.jsp");
+			response.sendRedirect("admin_page.jsp");
 		}
 		
 	}catch(Exception e) {

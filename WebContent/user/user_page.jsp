@@ -12,17 +12,11 @@
 		request.getSession().setAttribute("ID", id);
 	%>
 	<h1>user Page</h1>
-	<a href="">sch</a>
-	<br>
-	<a href="user_reservation_movie.jsp">reservation</a>
-	<br>
-	<a href="">pay</a>
-	<br>
-
-	<a href="user_form_modify.jsp">modify</a>
-	</br>
-	<a href="user_form_delete.jsp">delete</a>
-	</br>
-	<a href="">Back</a>
+	<a href="">View the Movie List</a><br>
+	<a href="./reservation/user_reservation_movie.jsp">Reservation</a><br>
+	<a href="">Payment</a><br>
+	<a href="user_form_modify.jsp">Info modify</a></br>
+	<a href="user_form_delete.jsp">delete</a></br>
+	<a href="../login.jsp">Back</a>
 </body>
 </html>

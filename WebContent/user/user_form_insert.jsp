@@ -8,18 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>회원가입폼</h2>
+	<h2>Sign Up</h2>
 
-	<form method="post" action="user_insert_form_result.jsp">
-		아이디 : <input type="text" name="id" maxlength="20"><br/>
-		패스워드: <input type="password" name="passwd" maxlength="20"><br/>
-		이름 : <input type="text" name="name" maxlength="20"><br/> 
-		생일 : <input type="date" name="date"><br/> 
-		주소 : <input type="text" name="address" maxlength="20"><br/> 
-		휴대전화 : <input type="text" name="phone" maxlength="11"><br/> 
+	<form method="post" action="user_form_insert_result.jsp">
+		ID : <input type="text" name="id" maxlength="20"><br/>
+		PASSWORD: <input type="password" name="passwd" maxlength="20"><br/>
+		NAME : <input type="text" name="name" maxlength="20"><br/> 
+		BIRTH : <input type="date" name="date"><br/> 
+		ADDRESS : <input type="text" name="address" maxlength="20"><br/> 
+		PHONE : <input type="text" name="phone" maxlength="11"><br/> 
 		
 		
-		<input type="submit" value="회원가입"> <input type="reset" value="다시입력">
+		<input type="submit" value="SIGN UP"> <input type="reset" value="RESET">
 		
 	</form>
 </body>
