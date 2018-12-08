@@ -9,10 +9,10 @@
 	String next_page = "user_reservation_result.jsp";
 	String prev_page = "";
 	
-	String user_id = "abc";
+	String user_id = (String) request.getSession().getAttribute("ID");
 	
 	String schedule_number = request.getParameter("Schedule_Num");
-	//request.getSession().setAttribute("Schedule_Number", schedule_number);
+	request.getSession().setAttribute("Schedule_Number", schedule_number);
 	request.getSession().setAttribute("User_Id", user_id);
 	
 	Connection conn = null;
@@ -67,15 +67,18 @@
 		</head>
 		<body>
 			<h1>seat select</h1>
-
-			<%
+			<form action="<%=next_page %>">
+				<%
 				for (int i = 0; i < seat_count; i++) {
-					if (seat[i] == false) { %> <a href="<%=next_page %>?Real_Number=<%=i+1 %>"><%=i+1 %></a> <% }
+					if (seat[i] == false) { %> <input type="checkbox" name="<%=i+1 %>"><%=i+1 %></option> <% }
 					else { %> <a><%=i+1 %></a> <% }
 					
 					if ((i+1) % 5 == 0) { %><br><% }
 				}
 			%>
+			
+			<input type="submit">
+			</form>
 		</body>
 		</html>
 <%

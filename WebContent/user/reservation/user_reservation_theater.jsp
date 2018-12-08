@@ -4,6 +4,9 @@
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("euc-kr"); %>
 <%
+	String id = (String) request.getSession().getAttribute("ID");
+	request.getSession().setAttribute("ID", id);
+	
 	String Movie_Title= request.getParameter("Movie_title");
  	String Movie_Number = request.getParameter("Movie_Number1");
  	ArrayList auditorium_num = new ArrayList();
