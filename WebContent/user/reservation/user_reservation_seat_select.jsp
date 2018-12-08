@@ -8,11 +8,11 @@
 <%
 	String next_page = "user_reservation_result.jsp";
 	String prev_page = "";
-
-	String schedule_number = "1";
+	
 	String user_id = "abc";
 	
-	request.getSession().setAttribute("Schedule_Number", schedule_number);
+	String schedule_number = request.getParameter("Schedule_Num");
+	//request.getSession().setAttribute("Schedule_Number", schedule_number);
 	request.getSession().setAttribute("User_Id", user_id);
 	
 	Connection conn = null;
