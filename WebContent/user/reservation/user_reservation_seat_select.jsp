@@ -67,17 +67,19 @@
 		</head>
 		<body>
 			<h1>seat select</h1>
+			<table width="50%" border="1">
 			<form action="<%=next_page %>">
 				<%
 				for (int i = 0; i < seat_count; i++) {
-					if (seat[i] == false) { %> <input type="checkbox" name="<%=i+1 %>"><%=i+1 %></option> <% }
-					else { %> <a><%=i+1 %></a> <% }
+					if ((i+1) % 5 == 1) { %><tr><% }
+					if (seat[i] == false) { %> <td><%=i+1 %><input type="checkbox" name="<%=i+1 %>"></td><% }
+					else { %> <td><%=i+1 %></td> <% }
 					
-					if ((i+1) % 5 == 0) { %><br><% }
+					if ((i+1) % 5 == 0) { %></tr><% }
 				}
 			%>
-			
-			<input type="submit">
+			</table>
+			<input type="submit" value="reservation">
 			</form>
 		</body>
 		</html>
