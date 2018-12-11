@@ -103,6 +103,7 @@
 <body>
 	<%=str %>
 	
-	<a href="../user_page.jsp">Back</a>
+	<a href="../user_page.jsp">back</a>
+	<a href="../user_payment_online.jsp">online check</a>
 </body>
 </html>
