@@ -31,34 +31,36 @@
 				Schedule_no = temp;
 			}
 		}
-// 		int Schedule_no = rs1.getInt("Schedule_Number");
-		System.out.println("uuuu"+Schedule_no);
 		Schedule_no++;
-		System.out.println("asf"+Schedule_no);
 		
-// 		// 예외처림 해야됨 (exception needed)
-// 		String test ="select * from schedule";
-// 		pstmt = conn.prepareStatement(test);
-// 		ResultSet rs2 = pstmt.executeQuery();
-// 		while(rs2.next()){
-// 			int Auditorium_info = rs2.getInt("Auditorium_Number");
-// 			String Movie_info = rs2.getString("Movie_Number");
-// 			String start_info = rs2.getString("StartTime");
-// 			String end_info = rs2.getString("EndTime");
-			
-// 			if(Integer.parseInt(Auditorium_number) == Auditorium_info && Movie_info != Movie_number){
-// 				System.out.println("error");
-// 			}
-// 		}
-		String sql = "insert into schedule values (?, ?, ?, ?, ?)";
-		pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, Schedule_no);
-		System.out.println("zxcv"+Schedule_no);
-		pstmt.setInt(2, Integer.parseInt(Auditorium_number));
-		pstmt.setInt(3, Integer.parseInt(Movie_number));
-		pstmt.setString(4, starttime);
-		pstmt.setString(5, endtime);
-		pstmt.execute();
+		String except = "select * from schedule where Auditorium_Number=?";
+		pstmt = conn.prepareStatement(except);
+		pstmt.setString(1, Auditorium_number);
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()){
+			String Movie_Number = rs.getString("Movie_Number");
+			if(Movie_Number==Movie_number){
+				String sql = "insert into schedule values (?, ?, ?, ?, ?)";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, Schedule_no);
+				pstmt.setInt(2, Integer.parseInt(Auditorium_number));
+				pstmt.setInt(3, Integer.parseInt(Movie_number));
+				pstmt.setString(4, starttime);
+				pstmt.setString(5, endtime);
+				pstmt.execute();
+			}
+			else{
+				%>
+				<script>
+					alert("other movie already exist");
+					history.go(-1);
+				</script>
+				<%
+			}
+		}
+		
+		
+		
 %>
 <!DOCTYPE html>
 <html>
