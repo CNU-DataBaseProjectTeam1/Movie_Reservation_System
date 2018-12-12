@@ -51,20 +51,10 @@
 	<form method="post" action="admin_theater_modify_result.jsp?theater_name=<%=theater_name %>">
 		Address : <input type="text" name ="address" value="<%=address %>"/><br>
 		Phone Number: <input type="text" name ="phone_number" value="<%=phone_number %>"/><br>
-<%-- 		<% --%>
-// 			int cnt = 0;
-// 			while (rs.next()) {
-// 				cnt++;
-<%-- 				%> --%>
-<%-- 					Auditorium<%=cnt %>'s seat count :  --%>
-<%-- 					<input type="number" name="auditorium<%=cnt %>" value="<%=rs.getString("SeatCount")%>"><br>	 --%>
-<%-- 				<% --%>
-// 			}
-<%-- 		%> --%>
 		<input type="submit" value="Enter">
 	</form>
 	
-	<a href="admin_modify_page.jsp">Back</a>
+	<a href="admin_theater_modify_page.jsp">Back</a>
 </body>
 </html>
 

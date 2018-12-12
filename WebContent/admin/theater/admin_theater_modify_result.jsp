@@ -29,16 +29,6 @@
 		pstmt.setString(3, theater_name);
 		pstmt.executeUpdate();
 		
-// 		sql = "select * from auditorium where Theater_Name=?";
-// 		pstmt = conn.prepareStatement(sql);
-// 		pstmt.setString(1, theater_name);
-		
-// 		ResultSet rs = pstmt.executeQuery();
-		
-// 		while (params.hasMoreElements()) {
-// 			String auditorium = request.getParameter(params.nextElement());
-			
-// 		}
 		str = "Complete to modify";
 	} catch (Exception e) {
 		e.printStackTrace();

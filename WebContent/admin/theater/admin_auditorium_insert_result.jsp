@@ -47,7 +47,7 @@
 			pstmt.executeUpdate();	
 		}
 		
-		str = "Complete to insert the theater";
+		str = "Complete";
 		}catch(Exception e) {
 			e.printStackTrace();
 			str = "Fail";
