@@ -14,7 +14,7 @@
 	<h1>user Page</h1>
 	<a href="user_movielist_main.jsp">movie list</a>
 	<br>
-	<a href="user_reservation_movie.jsp">reservation</a>
+	<a href="./reservation/user_reservation_movie.jsp">reservation</a>
 	<br>
 	<a href="user_payment.jsp">payment</a>
 	<br>
