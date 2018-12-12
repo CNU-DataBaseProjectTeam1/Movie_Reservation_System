@@ -82,6 +82,7 @@
 		</tr>
 		</form>
 	</table>
+	<a href="../admin_page.jsp">back</a>
 </body>
 </html>
 
