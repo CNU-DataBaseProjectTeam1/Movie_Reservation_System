@@ -34,9 +34,9 @@
 		pstmt.executeUpdate();
 		System.out.println(movie_number);
 		if (movie_number!=0) {
-			str = name + " 삭제 되었습니다.";
+			str = name + " delete";
 		} else {
-			str = "삭제 실패";
+			str = "Fail";
 		}
 		sql = "select count(*) from movie where Movie_Number";
 		pstmt = conn.prepareStatement(sql);
@@ -56,7 +56,7 @@
 		}
 	} catch (Exception e) {
 		e.printStackTrace();
-		str = "삭제 실패";
+		str = "Fail";
 	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
