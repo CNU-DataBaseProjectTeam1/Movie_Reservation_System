@@ -77,11 +77,12 @@
 			<td><input type="text" name="start" placeholder="10:00"></input>
 			</td>
 			<td><input type="text" name="end" placeholder="12:00"></input></td>
-			<td><input type="submit" value="µî·Ï"></input></td>
+			<td><input type="submit" value="enter"></input></td>
 
 		</tr>
 		</form>
 	</table>
+	<a href="../admin_page.jsp">back</a>
 </body>
 </html>
 
