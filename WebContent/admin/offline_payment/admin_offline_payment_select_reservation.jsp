@@ -35,9 +35,8 @@
 		pstmt.setString(1, user_id);
 		
 		ResultSet rs = pstmt.executeQuery();
-		rs.next();
 		
-		str = "Complete to insert the movie";
+		str = "Complete";
 %>
     
 <!DOCTYPE html>
