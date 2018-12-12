@@ -7,8 +7,8 @@
 	<h2>Movie delete</h2>
 	
 	<form method="post" action="admin_movie_delete_result.jsp">
-		영화제목 : <input type="text" name="movie_name" placeholder="really delete?" maxlength="12"><br/>
-		<input type="submit" value="입력완료">
+		Movie title : <input type="text" name="movie_name" placeholder="really delete?" maxlength="12"><br/>
+		<input type="submit" value="Enter">
 	</form>
 </body>
 </html>
