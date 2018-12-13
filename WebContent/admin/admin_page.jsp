@@ -11,7 +11,7 @@
 	<a href="./movie/admin_movie_page.jsp">Movie Management</a><br>
 	<a href="">User Management</a><br>
 	<a href="./theater/admin_theater_page.jsp">Theater Management</a><br>
-	<a href="./schedule/admin_schedule_page.jsp">Schedule Management</a><br>
+	<a href="./schedule/admin_schedule_page.jsp">Schedule Management</a><br><br>
 	<a href="./offline_payment/admin_offline_payment_page.jsp">offline payment</a><br>
 	<a href="./ticket/admin_ticketing_page.jsp">ticketing</a><br><br>
 	

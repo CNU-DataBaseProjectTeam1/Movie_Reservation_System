@@ -11,6 +11,7 @@
 	<a href="admin_theater_insert.jsp">Theater Insert</a><br>
 	<a href="admin_theater_list.jsp">Theater Info Modify</a><br>
 	
+	<br>
 	<a href="../admin_page.jsp">Back</a>
 </body>
 </html>

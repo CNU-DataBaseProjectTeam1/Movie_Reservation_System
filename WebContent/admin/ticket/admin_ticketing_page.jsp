@@ -12,5 +12,8 @@
 		Enter the user id : <input type="text" name="user_id">
 		<input type="submit" value="search">
 	</form>
+	
+	<br>
+	<a href="../admin_page.jsp">Back</a>
 </body>
 </html>

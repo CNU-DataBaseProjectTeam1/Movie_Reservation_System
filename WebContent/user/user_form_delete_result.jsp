@@ -5,7 +5,7 @@
 <% request.setCharacterEncoding("euc-kr"); %>
 
 <%
-   String id = request.getParameter("id");
+   String id = (String) request.getSession().getAttribute("ID");
    
    Connection conn = null;
    PreparedStatement pstmt = null;
@@ -23,10 +23,10 @@
       pstmt = conn.prepareStatement(sql);
       pstmt.setString(1, id);
       pstmt.executeUpdate();
-      str = id+"삭제 되었습니다.";
+      str = id+" delete";
    }catch(Exception e){
 	   e.printStackTrace();
-	   str ="삭제 실패";
+	   str ="Fail";
    }
       
 %>
@@ -39,8 +39,8 @@
 <body>
 	<h1>user delete Result</h1>
 	<%=str%>
-	</br>
-	<a href="WebConetent/login.jsp">Back</a>
+	</br><br>
+	<a href="../login.jsp">Back</a>
 </body>
 </html>
 

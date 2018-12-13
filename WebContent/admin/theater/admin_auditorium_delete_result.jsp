@@ -50,6 +50,7 @@
 <body>
 	<h1>auditorium delete result</h1>
 	<%=str %>
+	<br><br>
 	<a href="admin_theater_page.jsp">Back</a>
 </body>
 </html>

@@ -31,10 +31,10 @@
 		pstmt.setInt(5, number);
 		pstmt.executeUpdate();
 
-		str = "영화가 수정 되었습니다.";
+		str = "Complete";
 	} catch (Exception e) {
 		e.printStackTrace();
-		str = "등록 실패";
+		str = "Fail";
 	}
 %>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@
 </head>
 <body>
 	<h1>Movie Modify Result</h1>
-	<%=str %>
+	<%=str %><br><br>
 	<a href="admin_movie_page.jsp">Back</a>
 </body>
 </html>

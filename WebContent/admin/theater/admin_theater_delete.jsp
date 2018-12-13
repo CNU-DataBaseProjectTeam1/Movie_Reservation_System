@@ -49,7 +49,7 @@
 <body>
 	<h1>theater delete</h1>
 	<%=str%>
-	</br>
+	<br><br>
 	<a href="admin_theater_page.jsp">Back</a>
 </body>
 </html>
