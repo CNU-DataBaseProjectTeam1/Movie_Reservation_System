@@ -16,9 +16,10 @@
 	<br>
 	<a href="./reservation/user_reservation_movie.jsp">reservation</a>
 	<br>
-	<a href="user_payment.jsp">payment</a>
+	<a href="./online_payment/user_online_payment_select_reservation.jsp">payment</a>
 	<br>
-
+	<a href="./ticket/user_ticketing_select_ticket.jsp">ticketing</a>
+	<br>
 	<a href="user_form_modify.jsp">modify</a>
 	</br>
 	<a href="user_form_delete.jsp">delete</a>

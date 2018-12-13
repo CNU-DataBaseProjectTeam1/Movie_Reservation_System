@@ -8,7 +8,7 @@
 <% request.setCharacterEncoding("euc-kr"); %>
 
 <%
-	String prev_page = "admin_offline_payment_page.jsp";
+	String prev_page = "../user_page.jsp";
 	
 	String user_id = (String) request.getSession().getAttribute("User_Id");
 	
@@ -91,7 +91,7 @@
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, last_number);
 			pstmt.setString(2, reservation_number_list.get(i));
-			pstmt.setString(3, "1");
+			pstmt.setString(3, "0");
 			pstmt.setInt(4, count*10000 - point);
 			pstmt.setInt(5, point);
 			pstmt.executeUpdate();
