@@ -16,7 +16,7 @@
 	
 	boolean flag = false;
 	
-	if (request.getParameter("point") != null) {
+	if (request.getParameter("point") != null && !request.getParameter("point").equals("0")) {
 		point = Integer.parseInt(request.getParameter("point"));
 	}
 	else {
