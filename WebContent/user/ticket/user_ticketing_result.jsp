@@ -29,6 +29,7 @@
 				+ "natural join seat "
 				+ "natural join schedule "
 				+ "natural join movie "
+				+ "natural join auditorium "
 				+ "natural join theater "
 				+ "where payment_number=? ";
 		pstmt = conn.prepareStatement(sql);

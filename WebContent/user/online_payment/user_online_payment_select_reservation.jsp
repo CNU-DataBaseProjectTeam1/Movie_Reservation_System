@@ -7,7 +7,7 @@
 
 <%
 	String next_page = "user_online_payment_pay_page.jsp";
-	String prev_page = "user_page.jsp";
+	String prev_page = "../user_page.jsp";
 	
 	String user_id = (String) request.getSession().getAttribute("ID");
 	request.getSession().setAttribute("User_Id", user_id);
