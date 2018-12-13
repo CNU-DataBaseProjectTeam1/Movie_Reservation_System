@@ -30,7 +30,7 @@
 						+ "natural join movie "
 						+ "natural join auditorium "
 						+ "natural join theater "
-						+ "where id=?";
+						+ "where id=? and payment_check=0";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, user_id);
 		

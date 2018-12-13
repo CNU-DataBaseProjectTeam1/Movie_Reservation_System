@@ -8,12 +8,19 @@
 <% request.setCharacterEncoding("euc-kr"); %>
 
 <%
-	String next_page = "admin_offline_payment_result.jsp";
-	String prev_page = "admin_offline_payment_select_reservation.jsp";
+	String prev_page = "admin_offline_payment_page.jsp";
 	
 	String user_id = (String) request.getSession().getAttribute("User_Id");
 	
+	int point = 0;
+	
+	if (request.getParameter("point") != null) {
+		point = Integer.parseInt(request.getParameter("point"));
+	}
+	
 	ArrayList<String> reservation_number_list = (ArrayList<String>) request.getSession().getAttribute("reservation_list");
+	
+	int count = reservation_number_list.size();
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -27,16 +34,72 @@
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
-		int count = reservation_number_list.size();
-		System.out.println(count);
-		// get a user point
-// 		String sql = "select * from user where id=?";
-// 		pstmt = conn.prepareStatement(sql);
-// 		pstmt.setString(1, user_id);
-// 		ResultSet rs = pstmt.executeQuery();
-// 		rs.next();
+		// get user point
+		String sql = "select * from user where id=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, user_id);
 		
-// 		int point = rs.getInt("Point");
+		ResultSet rs = pstmt.executeQuery();
+		rs.next();
+		
+		int user_point = rs.getInt("point");
+		
+		// minus user point
+		sql = "update user set point=? where id=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, user_point - point);
+		pstmt.setString(2, user_id);
+		pstmt.executeUpdate();
+		
+		// reservation payment convert to true		
+		for (int i = 0; i < count; i++) {
+			sql = "update reservation set payment_check=1 where reservation_number=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, reservation_number_list.get(i));
+			pstmt.executeUpdate();
+		}
+		
+		// make payment record
+		sql = "select * from payment";
+		pstmt = conn.prepareStatement(sql);
+		
+		rs = pstmt.executeQuery();
+		
+		int last_number = 1;
+		
+		if (rs.last()) {
+			last_number = Integer.parseInt(rs.getString("Payment_Number")) + 1; // (last recode's num) + 1	
+		}
+		
+
+		for (int i = 0; i < count; i++) {
+			sql = "insert into payment values(?, ?, ?, ?, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, last_number);
+			pstmt.setString(2, reservation_number_list.get(i));
+			pstmt.setString(3, "1");
+			pstmt.setInt(4, count*10000 - point);
+			pstmt.setInt(5, point);
+			pstmt.executeUpdate();
+		}
+		
+		// make a ticket
+		sql = "select * from ticket";
+		pstmt = conn.prepareStatement(sql);
+		
+		rs = pstmt.executeQuery();
+		
+		int last_ticket_number = 1;
+		
+		if (rs.last()) {
+			last_ticket_number = Integer.parseInt(rs.getString("ticket_number")) + 1; // (last recode's num) + 1	
+		}
+		
+		sql = "insert into ticket values(?, ?)";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, last_ticket_number);
+		pstmt.setInt(2, last_number);
+		pstmt.executeUpdate();
 		
 		str = "Complete";
 %>
@@ -49,7 +112,7 @@
 </head>
 <body>
 	<h1>payment result</h1>
-	
+	<%=str %>
 	<a href="<%=prev_page %>">Back</a>
 </body>
 </html>
