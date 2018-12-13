@@ -15,8 +15,8 @@
 	int point = 0;
 	
 	boolean flag = false;
-	
-	if (request.getParameter("point") != null) {
+
+	if (request.getParameter("point") != null && !request.getParameter("point").equals("0")) {
 		point = Integer.parseInt(request.getParameter("point"));
 	}
 	else {
@@ -24,8 +24,6 @@
 	}
 	
 	ArrayList<String> reservation_number_list = (ArrayList<String>) request.getSession().getAttribute("reservation_list");
-	
-	System.out.println(reservation_number_list);
 	
 	int count = reservation_number_list.size();
 	
