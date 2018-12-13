@@ -28,7 +28,7 @@
 		pstmt.setString(1, theater_name);
 		
 		ResultSet rs = pstmt.executeQuery();
-		
+		int cnt = 1;
 		str = "Complete";
 %>
     
@@ -40,7 +40,7 @@
 </head>
 <body>
 	<h1>auditorium delete</h1>
-	<table>
+	<table border="1px" width="50%">
 	<tr>
 		<th></th>
 		<th>Number</th>
@@ -52,7 +52,7 @@
 		%>
 			<tr>
 				<td><input type="checkbox" name="<%=rs.getString("Auditorium_Number") %>"></td>
-				<td><%=rs.getString("Auditorium_Number") %></td>
+				<td><%=cnt++ %></td>
 				<td><%=rs.getString("SeatCount") %></td>
 			</tr>
 		<%
@@ -61,6 +61,7 @@
 	<input type="submit" value="delete">
 	</form>
 	</table>
+	<br>
 	<a href="<%=prev_page %>">Back</a>
 </body>
 </html>

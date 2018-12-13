@@ -52,7 +52,7 @@
 			str = "Fail";
 		}
 		else{
-		String sql = "insert into user values(?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into user values(?, ?, ?, ?, ?, ?, ?)";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
 		pstmt.setString(2, password);
@@ -61,7 +61,6 @@
 		pstmt.setString(5, birth);
 		pstmt.setString(6, phone);
 		pstmt.setString(7, point);
-		pstmt.setString(8, vip);
 		pstmt.executeUpdate();
 		
 		str = "Complete to register User";}

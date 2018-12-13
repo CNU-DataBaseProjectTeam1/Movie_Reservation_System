@@ -60,7 +60,7 @@
 </head>
 <body>
 	<h1>Movie Insert Result</h1>
-	<%=str %><br>
+	<%=str %><br><br>
 	<a href="admin_movie_page.jsp">Back</a>
 </body>
 </html>

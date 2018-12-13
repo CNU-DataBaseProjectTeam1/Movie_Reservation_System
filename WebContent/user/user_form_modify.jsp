@@ -14,8 +14,6 @@
 	String address = "";
 	String birth = "";
 	String phone = "";
-	String point = "";
-	String vip = "";
 
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -42,8 +40,6 @@
 		address = rs.getString("Address");
 		birth = rs.getString("Birth");
 		phone = rs.getString("PhoneNumber");
-		point = rs.getString("Point");
-		vip = rs.getString("VIP");
 %>
 <!DOCTYPE html>
 <html>
@@ -63,9 +59,7 @@
 		address : <input type="text" name="address" value="<%=address%>"/><br>
 		birth : <input type="text" name="birth" value="<%=birth%>" /><br>
 		phone : <input type="text" name="phone" value="<%=phone%>" /><br>
-		point : <input type="text" name="point" value="<%=point%>" /><br>
-		vip : <input type="text" name="vip" value="<%=vip%>" /><br> <input
-			type="submit" value="Enter">
+		<input type="submit" value="Enter">
 	</form>
 
 	<a href="user_page.jsp">Back</a>

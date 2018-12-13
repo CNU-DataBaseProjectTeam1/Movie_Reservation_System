@@ -21,6 +21,7 @@
 		<input type="submit" value="Enter">
 	</form>
 	
+	<br>
 	<a href="admin_theater_page.jsp">Back</a>
 </body>
 </html>

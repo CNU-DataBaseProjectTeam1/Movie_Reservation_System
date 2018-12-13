@@ -39,7 +39,7 @@
 		<%
 	}
 	%>
-	
+	<br>
 	<a href="admin_movie_page.jsp">Back</a>
 </body>
 </html>

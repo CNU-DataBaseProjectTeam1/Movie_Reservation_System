@@ -13,8 +13,6 @@
 	String birth = request.getParameter("birth");
 	String address = request.getParameter("address");
 	String phone = request.getParameter("phone");
-	String point = "0";
-	String vip = " ";
 	System.out.println(id);
 
 	Connection conn = null;
@@ -39,22 +37,22 @@
 
 		pstmt.executeUpdate();
 
-		str = "회원정보가 수정 되었습니다.";
+		str = "Complete";
 	} catch (Exception e) {
 		e.printStackTrace();
-		str = "등록 실패";
+		str = "Fail";
 	}
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Movie Modify Result</title>
+<title>User Modify Result</title>
 </head>
 <body>
-	<h1>Movie Modify Result</h1>
+	<h1>User Modify Result</h1>
 	<%=str%>
 	</br>
-	<a href="user_form_modify.jsp">Back</a>
+	<a href="user_page.jsp">Back</a>
 </body>
 </html>

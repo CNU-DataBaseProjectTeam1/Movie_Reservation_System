@@ -44,6 +44,7 @@
 <body>
 	<h1>Theater Modify Result</h1>
 	<%=str %>
+	<br><br>
 	<a href="admin_theater_page.jsp">Back</a>
 </body>
 </html>

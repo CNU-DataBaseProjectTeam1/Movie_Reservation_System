@@ -62,7 +62,7 @@
 </head>
 <body>
 	<h1>Theater Insert Result</h1>
-	<%=str %><br>
+	<%=str %><br><br>
 	<a href="admin_theater_page.jsp">Back</a>
 </body>
 </html>

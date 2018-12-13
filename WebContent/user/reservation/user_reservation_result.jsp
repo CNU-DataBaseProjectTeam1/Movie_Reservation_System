@@ -102,7 +102,7 @@
 </head>
 <body>
 	<%=str %>
-	
+	<br><br>	
 	<a href="../user_page.jsp">back</a>
 </body>
 </html>

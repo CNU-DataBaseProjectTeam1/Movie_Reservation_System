@@ -24,7 +24,7 @@
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
-		String sql = "select * from reservation "
+		String sql = "select count(*) as c from reservation "
 						+ "natural join seat "
 						+ "natural join schedule "
 						+ "natural join movie "
@@ -35,6 +35,24 @@
 		pstmt.setString(1, user_id);
 		
 		ResultSet rs = pstmt.executeQuery();
+		
+		rs.next();
+		
+		int count = rs.getInt("c");
+		
+		sql = "select * from reservation "
+						+ "natural join seat "
+						+ "natural join schedule "
+						+ "natural join movie "
+						+ "natural join auditorium "
+						+ "natural join theater "
+						+ "where id=? and payment_check=0";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, user_id);
+		
+		rs = pstmt.executeQuery();
+		
+		
 		
 		str = "Complete";
 %>
@@ -47,31 +65,44 @@
 </head>
 <body>
 	<h1>select reservation</h1>
-	<table>
-	<tr>
-		<th></th>
-		<th>Movie</th>
-		<th>Theater</th>
-		<th>Auditorium</th>
-		<th>Seat Number</th>
-	</tr>
-	<form action=<%=next_page %>>
-		<%
-	while (rs.next()) {
-		%>
-			<tr>
-				<td><input type="checkbox" name="<%=rs.getString("Reservation_Number") %>"></td>
-				<td><%=rs.getString("Title") %></td>
-				<td><%=rs.getString("Theater_Name") %></td>
-				<td><%=rs.getString("Auditorium_Number") %></td>
-				<td><%=rs.getString("RealNumber") %></td>
-			</tr>
-		<%
-	}
+	<%
+		if (count == 0) {
+			%>
+				<h3>No data</h3>
+			<%
+		}
+		
+		else {
+			%>
+				<table>
+				<tr>
+					<th></th>
+					<th>Movie</th>
+					<th>Theater</th>
+					<th>Auditorium</th>
+					<th>Seat Number</th>
+				</tr>
+				<form action=<%=next_page %>>
+					<%
+				while (rs.next()) {
+					%>
+						<tr>
+							<td><input type="checkbox" name="<%=rs.getString("Reservation_Number") %>"></td>
+							<td><%=rs.getString("Title") %></td>
+							<td><%=rs.getString("Theater_Name") %></td>
+							<td><%=rs.getString("Auditorium_Number") %></td>
+							<td><%=rs.getString("RealNumber") %></td>
+						</tr>
+					<%
+				}
+				%>
+				<input type="submit" value="payment">
+				</form>
+				</table>
+			<%
+		}
 	%>
-	<input type="submit" value="payment">
-	</form>
-	</table>
+	
 	<a href="<%=prev_page %>">Back</a>
 </body>
 </html>

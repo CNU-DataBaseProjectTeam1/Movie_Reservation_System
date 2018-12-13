@@ -9,6 +9,7 @@
 <body>
 	<h1>Login</h1>
 	<a href="./admin/admin_login.jsp">Admin Login</a><br>
-	<a href="./user/user_login.jsp">User Login</a><br><br>
+	<a href="./user/user_login.jsp">User Login</a><br>
+	<a href="./user/user_form_insert.jsp">User Sign up</a><br><br>
 </body>
 </html>

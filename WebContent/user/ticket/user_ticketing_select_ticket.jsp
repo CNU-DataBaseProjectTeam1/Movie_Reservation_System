@@ -36,6 +36,12 @@
 		
 		ResultSet rs = pstmt.executeQuery();
 		
+		boolean flag = false;
+		if (rs.next()) {
+			flag = true;
+			rs.previous();
+		}
+		
 		str = "Complete";
 %>
 
@@ -47,26 +53,36 @@
 </head>
 <body>
 	<h1>select ticket</h1>
-	<table border="1px" width="50%">
-	<tr>
-		<td>Title</td>
-		<td>Theater</td>
-		<td>count</td>
-		<td></td>
-	</tr>
 	<%
-	while (rs.next()) {
-		%>
-			<tr>
-				<td><%=rs.getString("Title") %></td>
-				<td><%=rs.getString("Theater_Name") %></td>
-				<td><%=rs.getString("count") %></td>
-				<td><a href="user_ticketing_result.jsp?payment_number=<%=rs.getString("payment_number") %>">view</a></td>
-			</tr>
-		<%
-	}
+		if (flag == true) {
+			%>
+				<table border="1px" width="50%">
+				<tr>
+					<td>Title</td>
+					<td>Theater</td>
+					<td>count</td>
+					<td></td>
+				</tr>
+				<%
+				while (rs.next()) {
+					%>
+						<tr>
+							<td><%=rs.getString("Title") %></td>
+							<td><%=rs.getString("Theater_Name") %></td>
+							<td><%=rs.getString("count") %></td>
+							<td><a href="user_ticketing_result.jsp?payment_number=<%=rs.getString("payment_number") %>">view</a></td>
+						</tr>
+					<%
+				}
+				%>
+				</table>
+			<%
+		}
+		else {
+			%> <h3>No data</h3> <%
+		}
+	
 	%>
-	</table>
 	<a href="../user_page.jsp">Back</a>
 </body>
 </html>
