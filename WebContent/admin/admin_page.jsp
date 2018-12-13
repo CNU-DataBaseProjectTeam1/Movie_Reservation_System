@@ -13,6 +13,7 @@
 	<a href="./theater/admin_theater_page.jsp">Theater Management</a><br>
 	<a href="./schedule/admin_schedule_page.jsp">Schedule Management</a><br>
 	<a href="./offline_payment/admin_offline_payment_page.jsp">offline payment</a><br><br>
+	<a href="./ticket/admin_ticketing_page.jsp">ticketing</a><br><br>
 	
 	<a href="../login.jsp">Back</a>
 </body>
