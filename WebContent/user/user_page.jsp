@@ -18,6 +18,8 @@
 	<br>
 	<a href="./online_payment/user_online_payment_select_reservation.jsp">Reservation Payment</a>
 	<br>
+	<a href="./reservation_cancel/user_reservation_select.jsp">Reservation Cancel</a>
+	<br>
 	<a href="./ticket/user_ticketing_select_ticket.jsp">View Ticket</a>
 	<br><br>
 	<a href="user_form_modify.jsp">User Info Modify</a>
