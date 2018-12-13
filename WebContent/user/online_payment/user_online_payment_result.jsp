@@ -25,6 +25,8 @@
 	
 	ArrayList<String> reservation_number_list = (ArrayList<String>) request.getSession().getAttribute("reservation_list");
 	
+	System.out.println(reservation_number_list);
+	
 	int count = reservation_number_list.size();
 	
 	Connection conn = null;

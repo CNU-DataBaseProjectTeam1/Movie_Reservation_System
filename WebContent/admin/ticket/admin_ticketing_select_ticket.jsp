@@ -27,6 +27,7 @@
 				+ "natural join seat "
 				+ "natural join schedule "
 				+ "natural join movie "
+				+ "natural join auditorium "
 				+ "natural join theater "
 				+ "where id=? "
 				+ "group by payment_number";
@@ -66,7 +67,7 @@
 	}
 	%>
 	</table>
-	<a href="">Back</a>
+	<a href="../admin_page.jsp">Back</a>
 </body>
 </html>
 

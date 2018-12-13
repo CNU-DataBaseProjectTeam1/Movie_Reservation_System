@@ -27,6 +27,7 @@
 				+ "natural join seat "
 				+ "natural join schedule "
 				+ "natural join movie "
+				+ "natural join auditorium "
 				+ "natural join theater "
 				+ "where id=? "
 				+ "group by payment_number";
